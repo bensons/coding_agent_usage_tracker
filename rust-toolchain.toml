@@ -1,6 +1,5 @@
 [toolchain]
-# Pinned, not floating: the clippy gate is `-D warnings`, so a rolling
-# `nightly` turns every newly-added lint into a build failure on a tree nobody
-# touched. This is the nightly the rest of the workspace is pinned to.
-channel = "nightly-2026-08-31"
+# Pinned, not floating: the clippy gate is `-D warnings`, so each new stable
+# release's lints would otherwise fail the build on a tree nobody touched.
+channel = "1.96.0"
 components = ["rustfmt", "clippy"]

@@ -78,7 +78,7 @@ $ caut usage
 
 This project includes an [`AGENTS.md`](AGENTS.md) file with detailed guidelines for AI coding agents. If you're an AI assistant working on this codebase, read that file for:
 
-- Toolchain requirements (Rust 2024, nightly)
+- Toolchain requirements (Rust 2024, stable)
 - Code editing discipline and patterns
 - Testing and CI/CD requirements
 - Multi-agent coordination via MCP Agent Mail
