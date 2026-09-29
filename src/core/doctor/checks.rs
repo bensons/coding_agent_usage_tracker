@@ -541,13 +541,13 @@ mod tests {
         let file = claude::CredentialsSource::File;
         match claude_auth_status_from_payload(file, r#"{"mcpOAuth":{"s":{}}}"#) {
             CheckStatus::Fail { reason, .. } => {
-                assert!(reason.contains("Only MCP OAuth"), "{reason}")
+                assert!(reason.contains("Only MCP OAuth"), "{reason}");
             }
             other => panic!("expected Fail, got {other:?}"),
         }
         match claude_auth_status_from_payload(file, r#"{"claudeAiOauth":{"accessToken":""}}"#) {
             CheckStatus::Fail { reason, .. } => {
-                assert!(reason.contains("access token missing"), "{reason}")
+                assert!(reason.contains("access token missing"), "{reason}");
             }
             other => panic!("expected Fail, got {other:?}"),
         }
@@ -559,7 +559,7 @@ mod tests {
         }
         match claude_auth_status_from_payload(file, r#"{"foo":1}"#) {
             CheckStatus::Fail { reason, .. } => {
-                assert!(reason.contains("no claudeAiOauth"), "{reason}")
+                assert!(reason.contains("no claudeAiOauth"), "{reason}");
             }
             other => panic!("expected Fail, got {other:?}"),
         }
